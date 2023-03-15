@@ -1,0 +1,29 @@
+.canvas {
+    width: 80%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+  }
+  
+  .box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    transform: translate(-50%, -50%);
+	  cursor: pointer;
+    position: relative;
+  }
+  .message {
+    position: absolute;
+    width: auto; /* Can be in percentage also. */
+    height: auto;
+    margin: auto;
+    font-style: italic;
+    top: 33%; /* Position the message at the vertical center of the parent element */
+    left: 57%; /* Position the message at the horizontal center of the parent element */
+    transform: translate(-50%, -50%); /* Move the message back up and left by half its own size */
+    pointer-events: none; /* Allows click events to be passed through to the underlying box element */
+  }
