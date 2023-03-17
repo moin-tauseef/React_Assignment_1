@@ -1,31 +1,31 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Canvas.css';
 
 
-function Canvas({show, boxColour}) {
-    const box = {
-            id: 1,
-            color: 'red',
-            size: 'getRandomSize()',
-          };
-          
-          
-
+function Canvas({boxes}) {
+  
   return (
     <div className="canvas">
        
-     
-      {show && <div
-            // key={2}
-            className="box"
-            style={{
-              backgroundColor: boxColour,
-              width: `${box.size}px`,
-              height: `${box.size}px`,
-            }}
-            
-          />
-          }
+    
+      {
+        boxes.map(box=>{ 
+         return (box.show && <div
+         // key={2}
+         key={box.id}
+         className="box"
+         style={{
+           backgroundColor: box.color,
+           width: `${box.size}px`,
+           height: `${box.size}px`,
+           top:`${box.margin}%`,
+           left:`${box.margin+20}%`
+         }}
+         
+       />)
+        }
+        )
+      }
       
     </div>
   );
